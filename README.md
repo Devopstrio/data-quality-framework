@@ -4,17 +4,16 @@
 
 <h1>Data Quality Framework</h1>
 
-<p><strong>The Enterprise Standard for Measuring, Monitoring, and Improving Data Trust at Industrial Scale</strong></p>
+<p><strong>The Institutional-Grade Platform for Standardized Data Trust, Validation Engineering, and Multi-Cloud Quality Governance Ecosystems.</strong></p>
 
-[![Framework: Enterprise--Grade](https://img.shields.io/badge/Framework-Enterprise--Grade-blue.svg?style=for-the-badge&labelColor=000000)]()
-[![Status: Production--Ready](https://img.shields.io/badge/Status-Production--Ready-indigo.svg?style=for-the-badge&labelColor=000000)]()
-[![Cloud: Azure--AWS--GCP](https://img.shields.io/badge/Cloud-Azure--AWS--GCP-green.svg?style=for-the-badge&labelColor=000000)]()
-[![Governance: Quality--First](https://img.shields.io/badge/Governance-Quality--First-ff69b4?style=for-the-badge&labelColor=000000)]()
+[![Standard: Quality-Excellence](https://img.shields.io/badge/Standard-Quality--Excellence-blue.svg?style=for-the-badge&labelColor=000000)]()
+[![Status: Production--Ready](https://img.shields.io/badge/Status-Production--Ready-emerald.svg?style=for-the-badge&labelColor=000000)]()
+[![Focus: Secure--Validation--Orchestration](https://img.shields.io/badge/Focus-Secure--Validation--Orchestration-indigo.svg?style=for-the-badge&labelColor=000000)]()
 
 <br/>
 
-> **"Data without quality is just noise; quality without a framework is just luck."** 
-> Data Quality Framework is a flagship platform designed to enable organizations to define, monitor, score, and remediate data quality across multi-cloud and hybrid estates.
+> **"Industrializing data validation to automate enterprise trust."** 
+> **Data Quality Framework** is an enterprise-grade solution designed to provide a secure, measurable, and highly automated foundation for global data quality operations. It orchestrates the complex lifecycle of data trust—from continuous schema profiling and rule execution to anomaly detection and unified certification auditing.
 
 </div>
 
@@ -22,628 +21,263 @@
 
 ## 🏛️ Executive Summary
 
-**Data Quality Framework** is a flagship repository designed for Chief Data Officers (CDOs), Data Governance leads, and Engineering teams. In the modern data estate, the "Cost of Poor Quality" (COPQ) can account for 15-25% of total revenue.
+Fragmented validation scripts and manual data wrangling are strategic operational liabilities; lack of centralized quality orchestration is a primary barrier to organizational AI readiness and executive decision-making. Organizations fail to trust their data not because of a lack of storage, but because of fragmented rule standards, lack of automated anomaly validation, and an inability to orchestrate quality planes with industrial precision.
 
-This framework provides an industrialized approach to **Data Trust**, delivering production-ready **Rule Engines**, **Quality Workflows**, **Automated Profiling**, and **Executive Scorecards**. It supports **Databricks**, **Snowflake**, **Microsoft Fabric**, and **BigQuery**, enabling teams to transform raw datasets into **Certified Trusted Assets** with measurable SLAs.
-
----
-
-## 💡 Why Data Quality Matters
-
-Quality is the foundation of the "Data-Value" pyramid:
-- **Operational Efficiency**: Reducing the time engineers spend "cleaning" data (often 80% of their time).
-- **Informed Decisions**: Ensuring executives make billion-dollar bets on accurate, fresh data.
-- **AI/ML Reliability**: Preventing "Garbage In, Garbage Out" in high-stakes AI models.
-- **Regulatory Compliance**: Meeting stringent BCBS 239, GDPR, and HIPAA accuracy requirements.
+This repository provides the **Quality Intelligence Plane**. It implements a complete **Validation-Framework-as-Code**, enabling Data Governance and Platform Engineering teams to manage global trust foundations as first-class citizens. By automating the identification of accuracy bottlenecks through real-time telemetry analysis and orchestrating the provisioning of secure performance-driven validation policies, we ensure that every organizational data asset—from raw Bronze tables to certified Gold models—is validated by default, audited for history, and strictly aligned with institutional SLA frameworks.
 
 ---
 
-## 🚀 Business Outcomes
+## 📐 Architecture Storytelling: Principal Reference Models
 
-### 🎯 Strategic Quality Impact
-- **Industrialized Trust**: Moving from "Ad-hoc" scripts to a unified, scalable quality engine.
-- **Rapid Remediation**: Reducing Mean Time to Resolve (MTTR) for data quality incidents by 70%.
-- **Certified Consumption**: Providing business users with "Trust Scores" directly on their dashboards.
-- **Automated Governance**: Embedding quality checks into CI/CD pipelines and ingestion workflows.
-
----
-
-## 🏗️ Technical Stack
-
-| Layer | Technology | Rationale |
-|---|---|---|
-| **Quality Engine** | Python, Pandas, NumPy | High-performance, flexible rule execution and profiling. |
-| **Control Plane** | FastAPI | High-performance API for rules, scoring, and incidents. |
-| **Frontend** | React 18, Vite | Premium portal for executive scorecards and rule management. |
-| **IaC Foundation** | Terraform | Multi-cloud infrastructure consistency and automation. |
-| **Database** | PostgreSQL | Centralized repository for quality rules, scores, and incidents. |
-| **Observability** | Prometheus / Grafana | Real-time monitoring of quality check execution and health. |
-
----
-
-## 📐 Architecture Storytelling: 60+ Diagrams
-
-### 1. Executive High-Level Architecture
-The holistic vision of the enterprise data trust lifecycle.
-
-```mermaid
-graph TD
-    User[Consumers / Analysts] --> Portal[Quality Portal]
-    Portal --> Engine[Quality Engine]
-    Engine --> MultiCloud[Azure/AWS/GCP Estates]
-    MultiCloud --> Rules[Rule Repository]
-    Rules --> Alerts[Incident Management]
-```
-
-### 2. Detailed Component Topology
-The internal service boundaries and management layers of the framework.
+### 1. Principal Architecture: Global Data Quality & Trust Intelligence Plane
+This diagram illustrates the end-to-end flow from data ingestion and multi-cloud orchestration to rule enforcement, anomaly validation, and institutional certification auditing.
 
 ```mermaid
 graph LR
-    subgraph "Control Plane"
-        API[Quality API]
-        Metadata[(Rule Store)]
-        Worker[Job Orchestrator]
+    %% Subgraph Definitions
+    subgraph DataIngress["Raw Estate & Pipeline Ingress"]
+        direction TB
+        Raw_Storage["S3 / ADLS / GCS (Bronze)"]
+        Stream_Ingest["Kafka / Event Hubs"]
+        Transact_DBs["Operational SQL / NoSQL"]
     end
-    subgraph "Execution Plane"
-        Engine[Python DQ Engine]
-        Profiling[Profiling Service]
-        Score[Scoring Module]
+
+    subgraph IntelligenceEngine["Quality Intelligence Hub"]
+        direction TB
+        API["FastAPI Validation Gateway"]
+        QualityOrchestrator["Global Rule & Profiling Hub"]
+        Governance_Hub["Compliance & Certification Guardrail Hub"]
+        AIOps_Validator["Drift & Anomaly Analysis Hub"]
     end
-    API --> Metadata
-    Worker --> Engine
-```
 
-### 3. Frontend to Backend Request Path
-Tracing a "Run Quality Check" request through the stack.
+    subgraph OperationsPlane["Distributed Validation Ecosystem"]
+        direction TB
+        ManagedEngines["Managed Standardized Rule Executors"]
+        ActiveProfiles["Managed Automated Data Profilers"]
+        CertifiedSinks["Managed Trusted Consumption Hubs"]
+    end
 
-```mermaid
-sequenceDiagram
-    participant Eng as Data Engineer
-    participant W as React UI
-    participant A as FastAPI
-    participant Q as Redis Queue
-    participant E as Quality Engine
+    subgraph OperationsHub["Institutional Quality Hub"]
+        direction TB
+        Scorecard["Data Trust Maturity Scorecard"]
+        Analytics["Anomaly MTTR & Certification Velocity Stats"]
+        Audit["Forensic Validation Metadata Lake"]
+    end
+
+    subgraph DevOps["Quality-Framework-as-Code Framework"]
+        direction TB
+        TF["Terraform Engine Modules"]
+        DriftBot["Rule & Config Drift Validator"]
+        ChatOps["Trust Operations Hub"]
+    end
+
+    %% Flow Arrows
+    DataIngress -->|1. Register Schema| API
+    API -->|2. Orchestrate Profile| QualityOrchestrator
+    QualityOrchestrator -->|3. Apply Trust Guard| Governance_Hub
+    Governance_Hub -->|4. Assess Anomaly| AIOps_Validator
     
-    Eng->>W: Click "Run Finance Audit"
-    W->>A: POST /checks/run
-    A->>Q: Enqueue Quality Job
-    Q-->>E: Pick up Job: Audit_123
-    E-->>A: Status: Executing Rules...
-    A-->>W: Render Progress Progress
+    AIOps_Validator -->|5. Execute Rule| OperationsPlane
+    OperationsPlane -->|6. Notify Status| ChatOps
+    API -->|7. Visualize Health| Scorecard
+    
+    Scorecard -->|8. Track Maturity| Analytics
+    Scorecard -->|9. Record Validation| Audit
+    
+    TF -->|10. Provision Backbone| IntelligenceEngine
+    DriftBot -->|11. Inject Accuracy Risk| QualityOrchestrator
+    Audit -->|12. Improve Operations| ManagedEngines
+
+    %% Styling
+    classDef ingress fill:#f5f5f5,stroke:#616161,stroke-width:2px;
+    classDef intel fill:#e8eaf6,stroke:#1a237e,stroke-width:2px;
+    classDef operations fill:#e1f5fe,stroke:#01579b,stroke-width:2px;
+    classDef ops fill:#ede7f6,stroke:#311b92,stroke-width:2px;
+    classDef devops fill:#e8f5e9,stroke:#1b5e20,stroke-width:2px;
+
+    class DataIngress ingress;
+    class IntelligenceEngine intel;
+    class OperationsPlane operations;
+    class OperationsHub ops;
+    class DevOps devops;
 ```
 
-### 4. Metadata + Rules Control Plane
-The "Brain" of the framework managing cross-cloud quality definitions.
-
-```mermaid
-graph TD
-    Hub[Rules Hub] --> Global[Global Rules]
-    Hub --> Domain[Domain Rules]
-    Global --> Source_A[Snowflake]
-    Domain --> Source_B[Databricks]
-```
-
-### 5. Multi-Cloud Data Platform Topology
-Synchronizing quality standards across diverse storage and compute layers.
-
-```mermaid
-graph LR
-    Portal[Global Hub] --> Target_AZ[Azure: Fabric / ADLS]
-    Portal --> Target_AWS[AWS: Redshift / S3]
-    Portal --> Target_GCP[GCP: BigQuery]
-```
-
-### 6. Regional Deployment Model
-Hosting quality engines close to the data for performance and sovereignty.
-
-```mermaid
-graph TD
-    LB[Load Balancer] --> EastUS[US East: Engine A]
-    LB --> WestEurope[West Europe: Engine B]
-    EastUS --> Data[(Regional Lakehouse)]
-```
-
-### 7. DR Failover Model
-Ensuring quality monitoring is resilient to regional outages.
+### 2. The Quality Validation Lifecycle Flow
+The continuous path of a validation platform from initial ingestion (raw) and profiling (distributions) to active execution (rules), scoring (trust), and institutional forensic auditing (certification).
 
 ```mermaid
 graph LR
-    Primary[Active Site] -->|Sync State| Secondary[Standby Site]
-    Secondary -->|Heartbeat| Primary
-    Primary --> Failover{Regional Failure?}
-    Failover -->|Yes| Secondary
+    Ingest["Ingest (Raw)"] --> Profile["Profile (Distributions)"]
+    Profile --> Execute["Execute (Rules)"]
+    Execute --> Score["Score (Trust)"]
+    Score --> Certify["Certify (Asset)"]
 ```
 
-### 8. API Gateway Architecture
-Securing and throttling the entry point for quality orchestration.
-
-```mermaid
-graph TD
-    Req[Incoming Check Request] --> Auth[OIDC / IAM]
-    Auth --> WAF[Web App Firewall]
-    WAF --> Router[Service Router]
-```
-
-### 9. Queue Worker Architecture
-Managing long-running profiling and scoring tasks at scale.
+### 3. Distributed Quality Topology
+Strategically orchestrating standardized validation engines across operational databases, global data lakehouses, and multi-cloud analytics hubs, providing a unified institutional view of global data trust.
 
 ```mermaid
 graph LR
-    Job[Profile: Sales Hub] --> Redis[Redis Job Queue]
-    Redis --> W1[Worker Alpha: Profiling]
-    Redis --> W2[Worker Beta: Integrity Check]
-    W1 --> Result[Update Scorecard]
+    RegionA["Edge: Operational Sources"] -->|Sync| Hub["Unified Quality Hub"]
+    BU["Hub: Lakehouse (Databricks)"] -->|Sync| Hub
+    Cloud["Site: Multi-Cloud (Snowflake/Fabric)"] -->|Sync| Hub
+    Hub --- Logic["Global Validation Engine"]
 ```
 
-### 10. Dashboard Analytics Flow
-How raw quality telemetry becomes executive trust scorecards.
+### 4. Quality Governance & High-Trust Data Plane Protection Flow
+Executing complex logic for securing the bridge between raw landing zones, quality validation gates, and certified consumption layers, ensuring every organizational identity is verified and every data access is according to institutional standards.
 
 ```mermaid
 graph TD
-    Raw[Rule Execution Logs] --> Parser[Findings Parser]
-    Parser --> Scorer[Trust Scorer]
-    Scorer --> Dashboard[Executive UI]
+    QualityData["Usage: Validation & Trust Data"] --> Bridge["Rule: Guardrail Hub"]
+    Bridge --> PolicyMap["Rule: Certification & Policy Map"]
+    PolicyMap -->|Evaluate| Context["PATH: Global Quality View"]
+    Context --- Estimate["Data Trust Integrity Score"]
 ```
 
-### 11. Profiling Workflow
-Automatically discovering the "Shape" of data.
+### 5. Multi-Cloud Data Quality Federation Flow
+Automatically managing unified real-time validation standards across Azure Fabric, AWS Redshift, Databricks, and Snowflake, ensuring institutional quality consistency and trust boundaries by default.
 
 ```mermaid
 graph LR
-    Src[Data Source] --> Profile[Stats / Distribution]
-    Profile --> Baseline[Baseline Generation]
+    Org["Global Validation System"] -->|Apply| Guard["Governance Isolation Hub"]
+    Guard -->|Violate| Alert["Anomaly Threshold Alert"]
+    Guard -->|Pass| Verify["Status: Governed Asset"]
+    Verify --- Audit["Isolation Compliance Log"]
 ```
 
-### 12. Completeness Check Model
-Ensuring no data is missing.
-
-```mermaid
-graph TD
-    Data[Table] --> Nulls[Null Count]
-    Nulls --> Threshold[Threshold Check]
-```
-
-### 13. Accuracy Validation Flow
-Verifying values against business logic.
+### 6. Encryption & Perimeter Protection Flow (Quality Standard)
+Managing the lifecycle of a profiling request, automatically enforcing institutional TLS 1.3, Data-in-Use masking, and row-level security standards as required by security policy, ensuring zero-latency security confidence during validation.
 
 ```mermaid
 graph LR
-    Val[Raw Value] --> Map[Ref Dataset]
-    Map --> Valid{Match?}
+    ProfileReq["Schema Inspection Query"] -->|Check| Gatekeeper["Validation Protection Bot"]
+    Gatekeeper -->|Verify| TLS["TLS 1.3, Masking & RLS Check"]
+    TLS -->|Pass| Admit["Status: Secure Execution Traffic"]
+    Admit --- Audit["Security Compliance Log"]
 ```
 
-### 14. Consistency Rules Workflow
-Synchronizing data across systems.
+### 7. Institutional Quality Maturity Scorecard
+Grading organizational performance based on key indicators: Rule Coverage, Incident MTTR (Mean Time to Resolve), and Certified Asset Usage.
 
 ```mermaid
 graph TD
-    CRM[CRM Data] --> Sync[Compare]
-    ERP[ERP Data] --> Sync
+    Post["Quality Health: 99%"] --> Risk["Anomaly Spikes Gap: 1%"]
+    Post --- C1["Rule Coverage (100%)"]
+    Post --- C2["Certified Asset Adoption (90%)"]
 ```
 
-### 15. Uniqueness Detection Model
-Eliminating duplicate records.
+### 8. Identity & RBAC for Quality Governance
+Managing fine-grained access to validation hubs, rule provisioning, and audit logs between Data Stewards, Data Engineers, and Governance Leads.
+
+```mermaid
+graph TD
+    GovLead["Governance Lead"] --> Hub["Manage Organization rules"]
+    DataEng["Data Engineer"] --> Exec["Execute validation logic"]
+    Steward["Data Steward"] --> Audit["Verify Trust Proofs"]
+```
+
+### 9. IaC Deployment: Quality-Framework-as-Code Framework
+Using modular Terraform to deploy and manage the versioned distribution of the trust tracking hubs, policy protection workers, and forensic metadata lakes.
 
 ```mermaid
 graph LR
-    Recs[Records] --> Hash[Key Hashing]
-    Hash --> Dupe[Duplicate Flag]
+    HCL["Infrastructure Code"] --> TF["Terraform Apply"]
+    TF --> Engine["Trust Control Plane"]
+    Engine --> Clusters["HA Validation Fleet"]
 ```
 
-### 16. Referential Integrity Flow
-Ensuring relationships are unbroken.
-
-```mermaid
-graph TD
-    Child[Orders] --> Parent[Customers]
-    Parent --> Orphan[Orphan Check]
-```
-
-### 17. Freshness SLA Evaluation
-Monitoring the "Heartbeat" of data.
+### 10. AIOps Quality Drift & Risk Validation Flow
+Using advanced analytics to identify sudden surges in anomaly detection, schema drift errors, suspicious freshness SLA breaches, or unusual data shape changes that could result in institutional risk or broken AI models.
 
 ```mermaid
 graph LR
-    Arr[Arrival Time] --> SLA[Target: 15m]
-    SLA --> Breach[Latency Alert]
+    Drift["Validation Change Event"] --> Analyzer["Drift Detection Bot"]
+    Analyzer -->|Anomaly| Alert["Trust Integrity Alert"]
+    Analyzer -->|Normal| Pass["Status Optimal"]
 ```
 
-### 18. Schema Drift Detection
-Protecting against breaking structure changes.
-
-```mermaid
-graph TD
-    V1[Schema v1] --> Diff[Compare]
-    V2[Schema v2] --> Diff
-```
-
-### 19. Trust Score Calculation
-The unified metric for data reliability.
+### 11. Metadata Lake for Forensic Quality Audit
+Storing long-term records of every rule executed (metadata), every anomaly detected, and every remediation history for institutional record-keeping, compliance auditing, and post-provisioning forensics.
 
 ```mermaid
 graph LR
-    Stats[Quality Stats] --> Weight[Domain Weighting]
-    Weight --> Score[Trust Score: A+]
-```
-
-### 20. Rule Severity Model
-Prioritizing critical failures.
-
-```mermaid
-graph TD
-    Fail[Rule Fail] --> Sev[P1: Blocker / P3: Warning]
-```
-
-### 21. Incident Triage Workflow
-Managing quality failures efficiently.
-
-```mermaid
-graph LR
-    Alert[Failure] --> Triage[Steward Review]
-```
-
-### 22. Root Cause Analysis Model
-Finding the source of the "Pollution."
-
-```mermaid
-graph TD
-    Out[Impact] --> Trace[Lineage Trace]
-    Trace --> Root[Source Bug]
-```
-
-### 23. Ticket Creation Lifecycle
-Integrating quality into the dev workflow.
-
-```mermaid
-graph LR
-    Alert[Failure] --> Jira[Create Ticket]
-```
-
-### 24. Steward Assignment Flow
-Enforcing accountability for data domains.
-
-```mermaid
-graph TD
-    Data[Sales Data] --> Steward[John Doe: Sales Steward]
-```
-
-### 25. Waiver Exception Workflow
-Managing legitimate data variances.
-
-```mermaid
-graph LR
-    Req[Exception Req] --> Board[Governance Review]
-```
-
-### 26. Retry / Replay Pipeline
-Recovering from transient failures.
-
-```mermaid
-graph TD
-    Fail[Job Fail] --> Backoff[Exponential Backoff]
-```
-
-### 27. Correction Backfill Model
-Healing historical data errors.
-
-```mermaid
-graph LR
-    Fix[Bug Fix] --> Replay[Process Old Data]
-```
-
-### 28. Producer-consumer Feedback Loop
-Aligning data expectations.
-
-```mermaid
-graph TD
-    Cons[Consumer] --> Feedback[Quality Feedback]
-    Feedback --> Prod[Producer]
-```
-
-### 29. SLA Breach Escalation
-Reporting critical delays to management.
-
-```mermaid
-graph LR
-    Breach[SLA Breach] --> Pager[Executive On-Call]
-```
-
-### 30. Continuous Improvement Cycle
-Moving from "Reactive" to "Proactive" quality.
-
-```mermaid
-graph TD
-    Analyze[Metrics] --> Improve[Rule Tuning]
-```
-
-### 31. Snowflake Quality Checks
-Integrating with the Snowflake engine.
-
-```mermaid
-graph LR
-    SF[Snowflake] --> SQL[Quality SQL]
-```
-
-### 32. Databricks Quality Flow
-Lakehouse monitoring via Spark.
-
-```mermaid
-graph TD
-    DBX[Databricks] --> Spark[Spark DQ Job]
-```
-
-### 33. Fabric Quality Workflow
-SaaS data monitoring on Microsoft Fabric.
-
-```mermaid
-graph LR
-    Fab[Fabric] --> Lake[OneLake Check]
-```
-
-### 34. BigQuery Rule Execution
-GCP native quality monitoring.
-
-```mermaid
-graph TD
-    BQ[BigQuery] --> BQ_Job[BQ Audit Job]
-```
-
-### 35. Redshift Monitoring Model
-AWS data warehouse audits.
-
-```mermaid
-graph LR
-    RS[Redshift] --> Audit[Audit View]
-```
-
-### 36. SQL Database Checks
-Monitoring legacy and operational stores.
-
-```mermaid
-graph TD
-    SQL[PostgreSQL] --> Rules[Check Rules]
-```
-
-### 37. API Payload Validation
-Ensuring interface contracts are met.
-
-```mermaid
-graph LR
-    Req[JSON Req] --> Schema[JSON Schema]
-```
-
-### 38. Kafka Stream Quality Model
-Real-time quality on the fly.
-
-```mermaid
-graph TD
-    Stream[Kafka] --> KSQL[KSQL Validation]
-```
-
-### 39. dbt Test Integration
-Synergy between modeling and quality.
-
-```mermaid
-graph LR
-    dbt[dbt tests] --> Hub[Quality Portal]
-```
-
-### 40. Batch Scheduler Lifecycle
-Managing periodic quality audits.
-
-```mermaid
-graph TD
-    Timer[Cron] --> Job[Trigger DQ]
-```
-
-### 41. Executive KPI Review Cycle
-Reporting trust scores to the CDO.
-
-```mermaid
-graph LR
-    Stats[Stats] --> Deck[Executive Deck]
-```
-
-### 42. Domain Scorecard Model
-Benchmarking departments against each other.
-
-```mermaid
-graph TD
-    Fin[Finance] --> Bench[Benchmark]
-    HR[HR] --> Bench
-```
-
-### 43. Product Owner Accountability
-Ensuring product owners care about data.
-
-```mermaid
-graph LR
-    Score[D Grade] --> Alert[Product Owner]
-```
-
-### 44. Trusted Dataset Certification
-The "Gold Star" for data consumers.
-
-```mermaid
-graph TD
-    DQ[Pass DQ] --> Cert[Certified Trusted]
-```
-
-### 45. Consumer Satisfaction Loop
-Measuring how users perceive data quality.
-
-```mermaid
-graph LR
-    User[User] --> Survey[Rating: 4.5/5]
-```
-
-### 46. Cost of Poor Quality Model
-Quantifying the financial impact of errors.
-
-```mermaid
-graph TD
-    Errors[Data Errors] --> Costs[$1.2M Loss]
-```
-
-### 47. Adoption Maturity Roadmap
-The journey to industrialized data trust.
-
-```mermaid
-graph LR
-    P1[Reactive] --> P2[Managed]
-```
-
-### 48. Quarterly Governance Review
-Aligning quality strategy with business.
-
-```mermaid
-graph TD
-    Review[Review Meeting] --> Plan[Next Quarter]
-```
-
-### 49. Benchmark Comparison Model
-Comparing performance against industry peers.
-
-```mermaid
-graph LR
-    Org[Our Org] --> Peers[Industry Avg]
-```
-
-### 50. Board Reporting Workflow
-Presenting the state of data to the board.
-
-```mermaid
-graph TD
-    Metrics[Reliability] --> Board[Board Presentation]
-```
-
-### 51. OIDC / SSO Auth Flow
-Secure portal access.
-
-```mermaid
-graph LR
-    User[User] --> Okta[Okta / IDP]
-```
-
-### 52. RBAC / ABAC Model
-Governing who can define rules.
-
-```mermaid
-graph TD
-    Role[DQ Architect] --> Perm[Write Rules]
-```
-
-### 53. Secrets Management Flow
-Securing data source credentials.
-
-```mermaid
-graph LR
-    App[Engine] --> Vault[Vault / KV]
-```
-
-### 54. Audit Logging Architecture
-Tracking every rule change.
-
-```mermaid
-graph TD
-    Change[Edit Rule] --> Log[(Audit Log)]
-```
-
-### 55. Metrics Pipeline
-Monitoring the performance of the DQ stack.
-
-```mermaid
-graph LR
-    Engine[Engine] --> Prom[Prometheus]
-```
-
-### 56. Logging Architecture
-Centralized engine records.
-
-```mermaid
-graph TD
-    Pod[DQ Pod] --> Loki[Loki]
-```
-
-### 57. Tracing Model
-Tracing quality requests across services.
-
-```mermaid
-graph LR
-    Portal[UI] --> Trace[OTel Trace]
-```
-
-### 58. Release Pipeline Workflow
-Continuous delivery of the framework.
-
-```mermaid
-graph TD
-    Git[Code] --> GHA[Deploy]
-```
-
-### 59. Canary Validation Flow
-Testing new rules on a subset of data.
-
-```mermaid
-graph LR
-    Rule[New Rule] --> Canary[1% Sample]
-```
-
-### 60. Change Governance Workflow
-Governing updates to critical quality rules.
-
-```mermaid
-graph TD
-    Edit[Edit P1 Rule] --> Appr[CAB Approval]
+    Provision["Validation Interaction Event"] --> Stream["Forensic Stream"]
+    Stream --> Lake["Quality Metadata Lake"]
+    Lake --> Trends["Remediation Efficiency Trends"]
 ```
 
 ---
 
-## 🔬 Data Quality Framework Methodology
+## 🏛️ Core Governance Pillars
 
-### 1. The Six Dimensions of Quality
-Our framework is built on an industry-standard methodology:
-- **Completeness**: Are there missing values or records?
-- **Accuracy**: Does the data reflect the real-world truth?
-- **Consistency**: Is the data uniform across all systems?
-- **Validity**: Does the data follow the defined business rules/formats?
-- **Uniqueness**: Are there redundant records?
-- **Freshness**: Is the data available when needed?
-
-### 2. Operating Cadence
-Data trust is not a one-time project; it is an ongoing operational commitment:
-1. **Daily**: Automated rule execution and incident alerting.
-2. **Weekly**: Steward review of quality regressions and MTTR.
-3. **Monthly**: Domain-level scorecard reviews with product owners.
-4. **Quarterly**: Strategic alignment of quality targets with business OKRs.
+1.  **Unified Foundation Coordination**: Maximizing accuracy by centralizing all validation workflows through a single institutional plane.
+2.  **Automated Rule Provisioning**: Eliminating "manual data cleaning" scenarios through proactive orchestration and pattern verification.
+3.  **Sequential Trust Intelligence**: Ensuring zero-interruption operations through dependency-aware certification-driven platform engineering.
+4.  **Zero-Trust Validation Protection**: Automatically enforcing identity-based access and data masking evaluation across all profiling tiers.
+5.  **Autonomous Operations Logic**: Guaranteeing reliability through automated industry-specific anomaly monitoring runbooks.
+6.  **Full Quality Auditability**: Immutable recording of every schema drift, null check, and freshness breach for institutional forensics.
 
 ---
 
-## 🚦 Getting Started
+## 🛠️ Technical Stack & Implementation
 
-### 1. Prerequisites
-- **Python 3.11+**.
-- **Terraform** (v1.5+).
-- **Docker Desktop**.
+### Quality Engine & APIs
+*   **Framework**: Python 3.11+ / FastAPI.
+*   **Performance Engine**: Custom Python-based logic (Pandas/PySpark) for multi-cloud rule execution and trust scoring metrics.
+*   **Integrations**: Native connectors for Great Expectations, dbt tests, Databricks, Snowflake, and Microsoft Purview.
+*   **Persistence**: PostgreSQL (Quality Ledger) and Redis (Live Validation State).
+*   **Auth Orchestrator**: Federated OIDC/SAML for least-privilege trust management access.
 
-### 2. Local Setup
+### Governance Dashboard (UI)
+*   **Framework**: React 18 / Vite.
+*   **Theme**: Dark, Slate, Indigo (Modern high-fidelity trust aesthetic).
+*   **Visualization**: D3.js for schema topologies and Recharts for validation velocity analytics.
+
+### Infrastructure & DevOps
+*   **Runtime**: AWS EKS or Azure Kubernetes Service (AKS) for management plane.
+*   **Quality Hub**: Managed event sourcing for immutable certification timeline reconstruction.
+*   **IaC**: Modular Terraform for deploying the validation landing zone and scoring fleet.
+
+---
+
+## 🏗️ IaC Mapping (Module Structure)
+
+| Module | Purpose | Real Services |
+| :--- | :--- | :--- |
+| **`infrastructure/quality_hub`** | Central management plane | EKS, PostgreSQL, Redis |
+| **`infrastructure/validation_workers`** | Distributed automation workers | Azure, AWS, GCP APIs |
+| **`infrastructure/profiling_pipes`** | Quality Orchestration Hubs | Webhooks, Spark/Databricks |
+| **`infrastructure/auditing`** | Forensic certification sinks | S3, Athena, Quicksight |
+
+---
+
+## 🚀 Deployment Guide
+
+### Local Principal Environment
 ```bash
-# Clone the repository
-git clone https://github.com/Devopstrio/data-quality-framework.git
+# Clone the Data Quality Framework repository
+git clone https://github.com/devopstrio/data-quality-framework.git
 cd data-quality-framework
 
-# Start the Quality Control Plane
-docker-compose up --build
+# Configure environment
+cp .env.example .env
+
+# Launch the Quality stack
+make init
+
+# Trigger a mock validation request and automated guardrail execution simulation
+make simulate-quality
 ```
-Access the Quality Portal at `http://localhost:3000`.
+
+Access the Management Portal at `http://localhost:3000`.
 
 ---
 
-## 🛡️ Governance & Security
-- **Security-by-Design**: All data source credentials are encrypted and stored in hardware security modules (HSM) or cloud-native vaults.
-- **Embedded Auditability**: Every rule change, execution, and override is recorded in an immutable audit log.
-- **Least-Privilege Access**: Role-based access control (RBAC) ensures only authorized stewards can define or modify critical quality rules.
+## 📜 License
+Distributed under the MIT License. See `LICENSE` for more information.
 
 ---
-<sub>&copy; 2026 Devopstrio &mdash; Engineering the Future of Industrialized Data Trust.</sub>
+<div align="center">
+  <p>© 2026 Devopstrio. All rights reserved.</p>
+</div>
